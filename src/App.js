@@ -13,7 +13,7 @@ function App() {
     event.preventDefault();
 
     try {
-      const response = await axios.get(`http://localhost:3001/api/weather/:${cityName}`);
+      const response = await axios.get(`https://weatherappserver-opbk.onrender.com/api/weather/:${cityName}`);
       setWeatherData(response.data);
       setIsWeatherVisible(true);
       setNotFoundRes(false)
