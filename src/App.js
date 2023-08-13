@@ -28,8 +28,9 @@ function App() {
       setNotFoundRes(false);
     } catch (error) {
       console.error("Error fetching weather data:", error);
-      setIsWeatherVisible(false);
       setNotFoundRes(true);
+      setIsWeatherVisible(false);
+      
     }
   };
   return (
