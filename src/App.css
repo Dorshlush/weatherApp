@@ -1,4 +1,4 @@
-/* Reset some default styles */
+/* font body and general definitions*/
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100;500;800&display=swap');
 
 
@@ -8,7 +8,6 @@ body, html {
   font-family: Heebo;
 }
 
-/* Set full-width and full-height layout */
 body {
   background-color: rgba(237, 237, 237, 1); /* Light gray background color */
   justify-content: center;
@@ -21,7 +20,7 @@ body {
   display: flex;
   width: 100%; 
 }
-
+/* spliting the screen to 2 main divs formbox and weatherContainer */
 .formBox {
   flex: 40%; 
   border-radius: 8px;
@@ -29,9 +28,7 @@ body {
   margin-left: 4%;
   color: rgba(58, 58, 84, 01)
 }
-
-/* Apply a max-width to the weather div */
-
+/* used another div with a relative definiton in order to be able to put the button and the txt input on top of each other */
 .relative-container{
   position: relative
 }
@@ -64,14 +61,12 @@ h1{
 }
 
 .weatherContainer {
-  flex: 60%; /* Take up 70% of the container's width */
-
-
+  flex: 60%; 
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
+/* this is where all the data is being showed */
 .weather{
   margin-left: 20%;
   margin-top: 10%;
@@ -111,6 +106,7 @@ margin-top: -10%;
   font-weight: 800;
   margin-left: 5%;
 }
+/* handling error message from the get request */
 .notfound {
   color: black;
   font-size: xx-large;
@@ -119,12 +115,9 @@ margin-top: -10%;
   
 }
 
-.notfound.show {
-  opacity: 1;
-  transition: opacity 3s ease-in-out;
-}
 
 
+/* make it more responsive for mobile devices */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
