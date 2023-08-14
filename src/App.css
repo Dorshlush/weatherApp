@@ -160,8 +160,12 @@ margin-top: -10%;
 
   .weather {
     margin: 10% auto; 
-    margin-top: 20%;
+    margin-top: 40%;
     width: 80%; 
+  }
+  .loader{
+    margin-top: 23%;
+    margin-left: 40%;
   }
   
 }
