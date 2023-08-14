@@ -14,11 +14,12 @@ function App() {
   });
   const [isWeatherVisible, setIsWeatherVisible] = useState(false); // Add this state
   const [notFoundRes, setNotFoundRes] = useState(false);
+  const [loaderHandler, setLoaderHandler] = useState(false);
 
   //sending the request to the server and handling the errors
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+    setLoaderHandler(true)
     try {
       const response = await axios.get(
         `https://weatherappserver-opbk.onrender.com/api/weather/:${cityName}`
@@ -26,11 +27,12 @@ function App() {
       setWeatherData(response.data);
       setIsWeatherVisible(true);
       setNotFoundRes(false);
+      setLoaderHandler(false)
     } catch (error) {
       console.error("Error fetching weather data:", error);
       setNotFoundRes(true);
       setIsWeatherVisible(false);
-      
+      setLoaderHandler(false)
     }
   };
   return (
@@ -54,6 +56,8 @@ function App() {
             <button className="checkBtn" type="submit">
               Check
             </button>
+            {loaderHandler && <div class="loader"></div>}
+
           </div>
         </form>
       </div>
@@ -71,7 +75,7 @@ function App() {
             <div className="dataContainer">
               <h3 id="city">{weatherData.name}</h3>
               <h4 id="country">{weatherData.country}</h4>
-              <h2 id="degrees">{Math.abs(weatherData.temp_c)}&deg;</h2>
+              <h2 id="degrees">{Math.round(weatherData.temp_c)}&deg;</h2>
               <table className="paramsTable">
                 <tr>
                   <th>precipitation</th>

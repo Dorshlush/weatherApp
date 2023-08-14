@@ -125,6 +125,26 @@ margin-top: -10%;
   transition: opacity 3s ease-in-out;
 }
 
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.7s linear infinite;
+  position:absolute;
+  margin-left: 89%;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 
 /* make it more responsive for mobile devices */
