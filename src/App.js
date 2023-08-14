@@ -49,6 +49,7 @@ function App() {
               value={cityName}
               onChange={(e) => setCityName(e.target.value)}
               placeholder="Enter city name"
+              required
             />
             <button className="checkBtn" type="submit">
               Check
@@ -70,7 +71,7 @@ function App() {
             <div className="dataContainer">
               <h3 id="city">{weatherData.name}</h3>
               <h4 id="country">{weatherData.country}</h4>
-              <h2 id="degrees">{weatherData.temp_c}&deg;</h2>
+              <h2 id="degrees">{Math.abs(weatherData.temp_c)}&deg;</h2>
               <table className="paramsTable">
                 <tr>
                   <th>precipitation</th>
